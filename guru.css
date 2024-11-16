@@ -1,0 +1,160 @@
+/* Root custom properties for colors */
+:root {
+    --color1: #6a11cb;
+    --color1: #e27a4a;
+    --color1: #5fe15f;
+    --color1: #aa3131;
+    --color2: #2575fc;
+    --color3: #00c6ff;
+    --color3: #00fbff;
+    --color3: #14d39d;
+    --color3: #d90cc1;
+    
+
+}
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, var(--color1), var(--color2), var(--color3));
+    background-size: 300% 300%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent overflow from bubbles */
+    animation: gradientAnimation 10s ease infinite; /* Animate background */
+}
+
+/* Background animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Bubble container */
+.bubble-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Send bubbles behind the form */
+}
+
+/* Bubbles */
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 80px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    animation: floatBubble 10s infinite ease-in-out;
+}
+
+.bubble:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+.bubble:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s;
+}
+.bubble:nth-child(3) {
+    left: 50%;
+    animation-delay: 4s;
+}
+.bubble:nth-child(4) {
+    left: 70%;
+    animation-delay: 6s;
+}
+.bubble:nth-child(5) {
+    left: 90%;
+    animation-delay: 8s;
+}
+
+/* Bubble float animation */
+@keyframes floatBubble {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-300px) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Form container styles */
+.container {
+    text-align: center;
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Ensure form is above bubbles */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[readonly] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
