@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Loan ID Generation</title>
+    <link rel="stylesheet" href="m.css">
+</head>
+<body>
+    <div class="bubble-container">
+        <!-- Rectangle Bubbles -->
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    <div class="container">
+        <h1>Bank Loan ID Generation</h1>
+        <form class="form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label for="loan-amount">Loan Amount:</label>
+            <input type="number" id="loan-amount" placeholder="Enter loan amount">
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <button type="button" onclick="generateBankId()">Generate Loan ID</button>
+
+            <label for="loan-id">Loan ID:</label>
+            <input type="text" id="loan-id" placeholder="Generated Loan ID" readonly>
+        </form>
+    </div>
+
+    <script>
+        // Function to generate a random Loan ID
+        function generateBankId() {
+            const loanId = 'BANK' + Math.floor(Math.random() * 1000000);
+            document.getElementById('loan-id').value = loanId;
+        }
+    </script>
+</body>
+</html>
